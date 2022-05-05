@@ -1,0 +1,19 @@
+<ng-container *ngIf="(getWeatherView$ | async) as view">
+  <ng-container
+    *ngTemplateOutlet="loadingTemplate; context: {isLoading: view.isLoading}"
+  ></ng-container>
+
+  <ng-container
+    *ngTemplateOutlet="errorTemplate; context: {error: view.error}"
+  ></ng-container>
+
+  <ng-container *ngIf="view.details"> {{view.details | json}} </ng-container>
+</ng-container>
+
+<ng-template let-isLoading="isLoading" #loadingTemplate>
+  <ng-container *ngIf="isLoading">...loading</ng-container>
+</ng-template>
+
+<ng-template let-error="error" #errorTemplate>
+  <ng-container *ngIf="error"> {{error}} </ng-container>
+</ng-template>
