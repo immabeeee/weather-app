@@ -13,6 +13,10 @@ export class WeatherFacadeService {
         return this.store.pipe(select(WeatherStateSelectors.selectWeatherDetailsView));
     }
 
+    getSelectedCity$(): Observable<string | null> {
+        return this.store.pipe(select(WeatherStateSelectors.selectSelectedCity));
+    }
+
     fetchWeather(city: string): void {
         this.store.dispatch(WeatherStateActions.fetchWeatherDetails({ city }))
     }

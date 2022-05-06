@@ -1,0 +1,63 @@
+<div class="wrapper">
+  <ng-container *ngIf="details">
+    <div class="header-wrapper">
+      <div class="header">
+        <h1 class="title">{{ details.name }}</h1>
+        <p class="description">{{ details.sys.country }}</p>
+      </div>
+    </div>
+
+    <div class="weather-icon-wrapper">
+      <ng-container *ngFor="let weather of details.weather">
+        <img src="assets/weather-icons/{{ weather.main }}.svg" />
+      </ng-container>
+    </div>
+
+    <div class="weather-details-wrapper">
+      <div class="weather-temp">
+        {{ details.main.temp }}
+        <span>°C</span>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="loading">
+    <div class="header-wrapper">
+      <div class="header">
+        <app-skeleton-loader
+          [skeletonWidth]="100"
+          [skeletonHeight]="30"
+        ></app-skeleton-loader>
+        <app-skeleton-loader
+          [skeletonWidth]="80"
+          [skeletonHeight]="20"
+        ></app-skeleton-loader>
+      </div>
+    </div>
+
+    <div class="weather-icon-wrapper">
+      <app-skeleton-loader
+        [skeletonWidth]="150"
+        [skeletonHeight]="150"
+        [isCircle]="true"
+      ></app-skeleton-loader>
+    </div>
+
+    <div class="weather-details-wrapper">
+      <div class="weather-temp">
+        <app-skeleton-loader
+          [skeletonWidth]="100"
+          [skeletonHeight]="50"
+        ></app-skeleton-loader>
+        <span>
+          <app-skeleton-loader
+            [skeletonWidth]="10"
+            [skeletonHeight]="10"
+          ></app-skeleton-loader>
+        </span>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="error">
+    {{ error }}
+  </ng-container>
+</div>

@@ -20,3 +20,9 @@ export const selectWeatherDetailsView = createSelector<WeatherStateEntity, State
     }
   }
 );
+export const selectSelectedCity = createSelector<WeatherStateEntity, State, string | null>(
+  selectWeatherStateState,
+  (state: State) => {
+    return state.selectedCity
+  }
+);

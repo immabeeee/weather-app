@@ -3,5 +3,6 @@ module.exports = {
     '<rootDir>/apps/weather',
     '<rootDir>/libs/shared/styles',
     '<rootDir>/libs/shared/assets',
+    '<rootDir>/libs/ui-button',
   ],
 };

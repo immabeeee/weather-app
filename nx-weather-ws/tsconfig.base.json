@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@nx-weather-ws/shared/assets": ["libs/shared/assets/src/index.ts"],
-      "@nx-weather-ws/shared/styles": ["libs/shared/styles/src/index.ts"]
+      "@nx-weather-ws/shared/styles": ["libs/shared/styles/src/index.ts"],
+      "@nx-weather-ws/ui-button": ["libs/ui-button/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
