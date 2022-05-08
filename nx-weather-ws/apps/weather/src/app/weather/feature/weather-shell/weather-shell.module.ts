@@ -7,6 +7,7 @@ import { WeatherStateEffects } from '../../data-access/state/weather-state.effec
 import { WeatherFacadeService } from '../../data-access/weather-facade.service';
 import { WeatherRestService } from '../../data-access/weather-rest.service';
 import { HttpClientModule } from '@angular/common/http';
+import { WeatherDetailsTranslatorService } from '../../data-access/weather-details-translator.service';
 
 @NgModule({
     imports: [
@@ -18,6 +19,6 @@ import { HttpClientModule } from '@angular/common/http';
         ),
         EffectsModule.forFeature([WeatherStateEffects]),
     ],
-    providers: [WeatherFacadeService, WeatherRestService],
+    providers: [WeatherFacadeService, WeatherRestService, WeatherDetailsTranslatorService],
 })
 export class WeatherShellModule { }

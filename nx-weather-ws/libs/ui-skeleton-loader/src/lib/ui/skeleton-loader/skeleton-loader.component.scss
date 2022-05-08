@@ -1,0 +1,35 @@
+.loader {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--grey-300);
+  width: var(--skeleton-width);
+  height: var(--skeleton-height);
+  border-radius: 4px;
+  margin-bottom: 4px;
+
+  &.circle {
+    border-radius: 50%;
+  }
+
+  &::after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--grey-200),
+      transparent
+    );
+    animation: loading 1s infinite;
+  }
+}
+
+@keyframes loading {
+  100% {
+    transform: translateX(100%);
+  }
+}

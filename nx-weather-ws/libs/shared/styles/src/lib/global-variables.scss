@@ -1,22 +1,33 @@
-:root {
-  --font-family: 'Helvetica', 'Arial', sans-serif;
-  --white-primary: #ffffff;
-  --white-secondary: #f7f8fa;
-  --black-primary: #000000;
-  --black-secondary: #111;
-  --yellow-primary: #ffcc00;
-  --red-primary: #d2161e;
-  --red-secondary: #b21319;
-  --gray-primary: #e8e9eb;
-  --gray-secondary: #696969;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://css.gg/globe-alt.css');
+@import url('https://css.gg/pin.css');
+@import url('https://css.gg/spinner.css');
+@import url('https://css.gg/arrow-down-o.css');
 
-  --font-800: 800;
+:root {
+  --font-family: 'Poppins', sans-serif;
+  --white-100: #ffffff;
+  --white-200: #dddfe0;
+  --grey-0: #a9abad;
+  --grey-100: #707070;
+  --grey-200: #3a3c3b;
+  --grey-300: #232627;
+  --grey-400: #111617;
+  --red-100: #f01d40;
+  --purple-100: #3a71c5;
+  --purple-200: #407cd6;
+  --purple-300: #355f9e;
+  --purple-400: #6494db;
+
+  --font-700: 700;
   --font-600: 600;
   --font-500: 500;
+  --font-400: 400;
+  --font-300: 500;
 
-  --font-xxl: 18px;
-  --font-xl: 14px;
-  --font-l: 12px;
-  --font-m: 10px;
-  --font-s: 9px;
+  --font-xxl: 42px;
+  --font-xl: 32px;
+  --font-l: 22px;
+  --font-m: 18px;
+  --font-s: 12px;
 }

@@ -1,0 +1,8 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "emitDecoratorMetadata": true
+  },
+  "exclude": ["../**/*.spec.ts"],
+  "include": ["../src/**/*", "*.js", "../../../libs/ui-card-wrapper/src/lib/utils/card.token.ts", "../../../libs/ui-card-wrapper/src/lib/data-access/card.interface.ts", "../../../libs/ui-card-wrapper/src/lib/card-wrapper"]
+}

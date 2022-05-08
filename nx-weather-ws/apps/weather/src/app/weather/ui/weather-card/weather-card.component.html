@@ -1,0 +1,74 @@
+<div class="wrapper">
+  <ng-container *ngIf="details">
+    <div class="header-wrapper">
+      <div class="header">
+        <p>{{ details.timestamp * 1000 | date }}</p>
+      </div>
+    </div>
+
+    <div class="weather-icon-wrapper">
+      <ng-container *ngFor="let weather of details.weather">
+        <img src="assets/weather-icons/{{ weather.main }}.svg" />
+      </ng-container>
+    </div>
+
+    <div class="weather-details-wrapper">
+      <div class="weather-temp min">
+        {{ details.temp_min }}
+        <span>°C</span>
+      </div>
+      <div class="weather-temp eve">
+        {{ details.temp }}
+        <span>°C</span>
+      </div>
+      <div class="weather-temp max">
+        {{ details.temp_max }}
+        <span>°C</span>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="loading">
+    <div class="header-wrapper">
+      <div class="header">
+        <app-skeleton-loader
+          [skeletonWidth]="100"
+          [skeletonHeight]="30"
+        ></app-skeleton-loader>
+      </div>
+    </div>
+
+    <div class="weather-icon-wrapper">
+      <app-skeleton-loader
+        [skeletonWidth]="50"
+        [skeletonHeight]="50"
+      ></app-skeleton-loader>
+    </div>
+
+    <div class="weather-details-wrapper">
+      <div class="weather-temp min">
+        <app-skeleton-loader
+          [skeletonWidth]="100"
+          [skeletonHeight]="50"
+        ></app-skeleton-loader>
+      </div>
+      <div class="weather-temp eve">
+        <app-skeleton-loader
+          [skeletonWidth]="100"
+          [skeletonHeight]="50"
+        ></app-skeleton-loader>
+      </div>
+      <div class="weather-temp max">
+        <app-skeleton-loader
+          [skeletonWidth]="100"
+          [skeletonHeight]="50"
+        ></app-skeleton-loader>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="error">
+    <div class="error-wrapper">
+      <p>{{ error }}</p>
+    </div>
+  </ng-container>
+</div>
