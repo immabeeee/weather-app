@@ -1,7 +1,7 @@
 .loader {
   position: relative;
   overflow: hidden;
-  background-color: var(--background-color);
+  background-color: var(--grey-300);
   width: var(--skeleton-width);
   height: var(--skeleton-height);
   border-radius: 4px;
@@ -21,7 +21,7 @@
     background: linear-gradient(
       90deg,
       transparent,
-      var(--slider-color),
+      var(--grey-200),
       transparent
     );
     animation: loading 1s infinite;

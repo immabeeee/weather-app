@@ -1,4 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { DailyForecastFor7DaysView } from '../model/daily-forecast.model';
 import { WeatherDetailsView } from '../model/weather-details.view.model';
 import {
   WEATHER_STATE_FEATURE_KEY,
@@ -20,6 +21,18 @@ export const selectWeatherDetailsView = createSelector<WeatherStateEntity, State
     }
   }
 );
+
+export const selectDailyForecastFor7DaysView = createSelector<WeatherStateEntity, State, DailyForecastFor7DaysView>(
+  selectWeatherStateState,
+  (state: State) => {
+    return {
+      forecast: state.dailyForecastFor7Days,
+      isLoading: state.dailyForecastFor7DaysLoading,
+      error: state.dailyForecastFor7DaysError
+    }
+  }
+);
+
 export const selectSelectedCity = createSelector<WeatherStateEntity, State, string | null>(
   selectWeatherStateState,
   (state: State) => {

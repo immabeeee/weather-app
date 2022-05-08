@@ -1,0 +1,14 @@
+<div class="header-wrapper">
+  <h1>{{ title }}</h1>
+  <nx-weather-ws-ui-button
+    (click)="handleRefresh()"
+    [iconName]="'gg-arrow-down-o'"
+    [label]="refreshButtonName"
+    [name]="refreshButtonName"
+    [isLoading]="isLoading"
+  ></nx-weather-ws-ui-button>
+</div>
+
+<section>
+  <ng-content></ng-content>
+</section>

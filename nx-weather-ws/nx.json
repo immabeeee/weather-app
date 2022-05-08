@@ -42,6 +42,12 @@
     "ui-button": {
       "tags": []
     },
+    "ui-card-wrapper": {
+      "tags": []
+    },
+    "ui-skeleton-loader": {
+      "tags": []
+    },
     "weather": {
       "tags": []
     },

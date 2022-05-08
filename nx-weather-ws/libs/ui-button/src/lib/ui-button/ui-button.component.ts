@@ -11,10 +11,10 @@ export class UiButtonComponent implements OnInit {
   @Input() name: string | null = null;
   @Input() label: string | null = null;
   @Input() isActive: boolean = false;
+  @Input() isLoading: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

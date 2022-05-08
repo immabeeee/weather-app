@@ -2,7 +2,7 @@
   <nx-weather-ws-ui-button
     (click)="toggleSelectDropdown($event)"
     [iconName]="'gg-pin'"
-    [label]="selectedCity"
+    [label]="selectedCity ? selectedCity : 'Select city'"
     [name]="'localize'"
   ></nx-weather-ws-ui-button>
 
@@ -14,11 +14,17 @@
       'slide-in': isSelectDropdownVisible
     }"
   >
-    <ng-container *ngFor="let city of availableCities">
-      <nx-weather-ws-ui-button
-        (click)="handleSelectedCity($event, city)"
-        [label]="city"
-      ></nx-weather-ws-ui-button>
+    <ng-container
+      *ngIf="availableCities && availableCities.length > 0; else emptyTemplate"
+    >
+      <ng-container *ngFor="let city of availableCities">
+        <nx-weather-ws-ui-button
+          (click)="handleSelectedCity($event, city)"
+          [label]="city"
+        ></nx-weather-ws-ui-button>
+      </ng-container>
     </ng-container>
   </div>
 </div>
+
+<ng-template #emptyTemplate>Oops, there is no content 😥</ng-template>

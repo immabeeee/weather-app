@@ -1,0 +1,53 @@
+<div class="wrapper">
+  <div class="city-select-wrapper">
+    <nx-weather-ws-weather-city-select
+      (selectCity)="handleSelectedCity($event)"
+      [availableCities]="cities"
+      [selectedCity]="getSelectedCity$ | async"
+    >
+    </nx-weather-ws-weather-city-select>
+  </div>
+
+  <div class="weather-cards-wrapper">
+    <ng-container
+      *ngIf="{
+        details: (getSimpleWeatherView$ | async),
+        selectedCity: (getSelectedCity$ | async)
+      } as vm"
+    >
+      <nx-weather-ws-card-wrapper
+        *ngIf="vm.details && vm.selectedCity"
+        [title]="'weather'"
+        [isLoading]="vm.details.isLoading"
+      >
+        <nx-weather-ws-weather-card
+          (refreshData)="fetchWeatherDetails(vm.selectedCity)"
+          [loading]="vm.details.isLoading"
+          [details]="vm.details.details"
+          [error]="vm.details.error"
+        >
+        </nx-weather-ws-weather-card>
+      </nx-weather-ws-card-wrapper>
+    </ng-container>
+
+    <ng-container
+      *ngIf="{
+        forecast: (getSimpleDailyForecastFor7DaysView$ | async)
+      } as view"
+    >
+      <nx-weather-ws-card-wrapper
+        *ngIf="view.forecast"
+        [title]="'forecast'"
+        [isLoading]="view.forecast.isLoading"
+      >
+        <nx-weather-ws-daily-forecast-for-seven-days-card
+          (refreshData)="fetchDailyForecastFor7Days()"
+          [loading]="view.forecast.isLoading"
+          [forecasts]="view.forecast.details"
+          [error]="view.forecast.error"
+        >
+        </nx-weather-ws-daily-forecast-for-seven-days-card>
+      </nx-weather-ws-card-wrapper>
+    </ng-container>
+  </div>
+</div>

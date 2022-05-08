@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WeatherCardComponent } from './weather-card.component';
-import { SkeletonLoaderModule } from '../../../shared/ui/skeleton-loader/skeleton-loader.module';
+import { UiSkeletonLoaderModule } from '@nx-weather-ws/ui-skeleton-loader';
 
 @NgModule({
     declarations: [WeatherCardComponent],
     imports: [
-        CommonModule, SkeletonLoaderModule
+        CommonModule, UiSkeletonLoaderModule
     ],
     providers: [],
     exports: [WeatherCardComponent]

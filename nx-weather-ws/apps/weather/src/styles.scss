@@ -2,10 +2,35 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--grey-400);
+    border-radius: 100px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+    background-color: var(--purple-100);
+  }
 }
 
 body {
   background: var(--grey-400);
   font-family: var(--font-family);
+  color: var(--white-200);
   height: 100vh;
+}
+
+.error-wrapper {
+  p {
+    color: var(--white-200);
+    font-size: var(--font-m);
+    font-weight: var(--font-300);
+  }
 }

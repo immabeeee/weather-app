@@ -16,8 +16,8 @@
 
   &:hover {
     cursor: pointer;
-    background-color: var(--grey-200);
-    transition: 0.3s;
+    background-color: rgba(255, 255, 255, 0.11);
+    transition: 0.2s;
     transform: scale(0.95);
   }
 
@@ -29,5 +29,6 @@
     color: var(--white-200);
     font-size: var(--font-l);
     font-weight: var(--font-300);
+    text-align: left;
   }
 }

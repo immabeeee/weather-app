@@ -5,6 +5,13 @@
     active: isActive
   }"
 >
-  <i *ngIf="iconName" class="{{ iconName }}"></i>
+  <ng-container *ngIf="isLoading; else iconTemplate">
+    <i class="gg-spinner"></i>
+  </ng-container>
+
   <h2 *ngIf="label">{{ label }}</h2>
 </button>
+
+<ng-template #iconTemplate>
+  <i *ngIf="iconName" class="{{ iconName }}"></i>
+</ng-template>
