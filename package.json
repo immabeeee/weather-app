@@ -10,6 +10,7 @@
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
     "nx": "nx",
     "start": "ng serve",
+    "start:prod": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",
@@ -48,6 +49,7 @@
     "@nrwl/angular": "12.5.7",
     "@types/stripe-v3": "^3.1.26",
     "date-fns": "^2.28.0",
+    "express": "^4.18.1",
     "rxjs": "^6.6.7",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
