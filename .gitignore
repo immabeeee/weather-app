@@ -17,6 +17,9 @@
 .settings/
 *.sublime-workspace
 
+# local env
+/apps/weather/src/environments/environments.ts
+
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json
