@@ -18,7 +18,7 @@
 *.sublime-workspace
 
 # local env
-# /apps/weather/src/environments/environments.ts
+/apps/weather/src/environments/environments.ts
 
 # IDE - VSCode
 .vscode/*

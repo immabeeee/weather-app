@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
-import { take } from "rxjs/operators";
+import { map, take, tap } from "rxjs/operators";
 import { environment } from "apps/weather/src/environments/environment";
 
 interface WeatherEnvVariables {
@@ -19,10 +19,11 @@ export class WeatherEnvVariablesService {
 
     public setWeatherEnvVariables(): void {
         if (environment.production) {
-            this.httpClient.get<WeatherEnvVariables>(window.location.origin + '/backend').pipe(take(1)).subscribe((variables: WeatherEnvVariables) => {
-                sessionStorage.setItem(this.urlBackendKey, variables.url);
-                sessionStorage.setItem(this.apiKeyKey, variables.apiKey);
-            });
+            this.httpClient.get<Response>(window.location.origin + '/backend')
+                .pipe(map((response: Response) => response.json()), take(1)).subscribe((variables: any) => {
+                    sessionStorage.setItem(this.urlBackendKey, variables.url);
+                    sessionStorage.setItem(this.apiKeyKey, variables.apiKey);
+                });
         }
     }
 
