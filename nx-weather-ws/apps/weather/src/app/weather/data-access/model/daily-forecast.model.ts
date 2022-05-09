@@ -7,7 +7,8 @@ export interface DailyForecastFor7DaysView {
 }
 
 export interface SimpleDailyForecastFor7DaysView {
-    details: SimpleWeatherDetails[] | null;
+    daily: SimpleWeatherDetails[] | null;
+    hourly: SimpleWeatherDetails[] | null;
     isLoading: boolean;
     error: string | null;
 }

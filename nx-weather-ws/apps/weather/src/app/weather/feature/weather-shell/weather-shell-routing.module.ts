@@ -6,7 +6,7 @@ const routes: Routes = [
         path: "",
         loadChildren: () =>
             import("../weather-details/weather-details.module").then(
-                (module) => module.WeatherListPageModule
+                (module) => module.WeatherDetailsPageModule
             ),
     },
 ];

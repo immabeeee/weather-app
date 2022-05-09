@@ -7,7 +7,7 @@ import { WeatherDetailsRoutingModule } from './weather-details-routing.module';
 import { WeatherDetailsComponent } from './weather-details.component';
 import { WeatherCitySelectModule } from '../weather-city-select/weather-city-select.module';
 import { UiCardWrapperModule } from '@nx-weather-ws/ui-card-wrapper';
-import { DailyForecastForSevenDaysCardModule } from '../../ui/daily-forecast-for-seven-days-card/daily-forecast-for-seven-days-card.module';
+import { ForecastCardModule } from '../../ui/forecast-card/forecast-card.module';
 
 @NgModule({
     declarations: [WeatherDetailsComponent],
@@ -16,7 +16,7 @@ import { DailyForecastForSevenDaysCardModule } from '../../ui/daily-forecast-for
         FormsModule,
         WeatherDetailsRoutingModule,
         WeatherCardModule,
-        DailyForecastForSevenDaysCardModule,
+        ForecastCardModule,
         ReactiveFormsModule,
         WeatherCitySelectModule,
         UiCardWrapperModule
@@ -24,4 +24,4 @@ import { DailyForecastForSevenDaysCardModule } from '../../ui/daily-forecast-for
     providers: [WeatherSearchFormService],
     bootstrap: [],
 })
-export class WeatherListPageModule { }
+export class WeatherDetailsPageModule { }

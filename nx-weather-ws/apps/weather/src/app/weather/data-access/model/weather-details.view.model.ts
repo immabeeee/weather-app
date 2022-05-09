@@ -12,9 +12,9 @@ export interface SimpleWeatherDetailsView {
 
 export interface SimpleWeatherDetails {
     timestamp: number;
-    temp_min: number;
-    temp_max: number;
-    temp: number;
+    temp_min: number | null;
+    temp_max: number | null;
+    temp: number | null;
     weather: Weather[];
 }
 

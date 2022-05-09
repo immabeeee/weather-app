@@ -1,11 +1,16 @@
 <div class="wrapper">
   <div class="city-select-wrapper">
-    <nx-weather-ws-weather-city-select
-      (selectCity)="handleSelectedCity($event)"
-      [availableCities]="cities"
-      [selectedCity]="getSelectedCity$ | async"
+    <nx-weather-ws-card-wrapper
+      [title]="'Select your city'"
+      [isRefreshAvailable]="false"
     >
-    </nx-weather-ws-weather-city-select>
+      <nx-weather-ws-weather-city-select
+        (selectCity)="handleSelectedCity($event)"
+        [availableCities]="cities"
+        [selectedCity]="getSelectedCity$ | async"
+      >
+      </nx-weather-ws-weather-city-select>
+    </nx-weather-ws-card-wrapper>
   </div>
 
   <div class="weather-cards-wrapper">
@@ -40,13 +45,24 @@
         [title]="'forecast'"
         [isLoading]="view.forecast.isLoading"
       >
-        <nx-weather-ws-daily-forecast-for-seven-days-card
+        <nx-weather-ws-forecast-card
           (refreshData)="fetchDailyForecastFor7Days()"
           [loading]="view.forecast.isLoading"
-          [forecasts]="view.forecast.details"
+          [forecasts]="view.forecast.daily"
           [error]="view.forecast.error"
+          [title]="'Daily forecast for 7 days'"
+          [description]="'day by day'"
         >
-        </nx-weather-ws-daily-forecast-for-seven-days-card>
+        </nx-weather-ws-forecast-card>
+        <nx-weather-ws-forecast-card
+          (refreshData)="fetchDailyForecastFor7Days()"
+          [loading]="view.forecast.isLoading"
+          [forecasts]="view.forecast.hourly"
+          [error]="view.forecast.error"
+          [title]="'Daily forecast for 7 days'"
+          [description]="'hour by hour'"
+        >
+        </nx-weather-ws-forecast-card>
       </nx-weather-ws-card-wrapper>
     </ng-container>
   </div>

@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UiSkeletonLoaderModule } from '@nx-weather-ws/ui-skeleton-loader';
-import { DailyForecastForSevenDaysCardComponent } from './daily-forecast-for-seven-days-card.component';
+import { ForecastCardComponent } from './forecast-card.component';
 import { WeatherCardModule } from '../weather-card/weather-card.module';
 
 @NgModule({
-    declarations: [DailyForecastForSevenDaysCardComponent],
+    declarations: [ForecastCardComponent],
     imports: [
         CommonModule, UiSkeletonLoaderModule, WeatherCardModule,
     ],
     providers: [],
-    exports: [DailyForecastForSevenDaysCardComponent]
+    exports: [ForecastCardComponent]
 })
-export class DailyForecastForSevenDaysCardModule { }
+export class ForecastCardModule { }

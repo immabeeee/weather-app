@@ -32,7 +32,8 @@ export class WeatherFacadeService {
     getSimpleDailyForecastFor7DaysView$(): Observable<SimpleDailyForecastFor7DaysView> {
         return this.store.pipe(select(WeatherStateSelectors.selectDailyForecastFor7DaysView)).pipe(map((view: DailyForecastFor7DaysView) => {
             return {
-                details: this.weatherDetailsTranslatorService.translateDailyForecastFor7DaysSimpleWeatherDetails(view.forecast),
+                daily: this.weatherDetailsTranslatorService.translateDailyForecastDetailsToSimpleWeatherDetails(view.forecast?.daily),
+                hourly: this.weatherDetailsTranslatorService.translateHourlyForecastDetailsToSimpleWeatherDetails(view.forecast?.hourly),
                 isLoading: view.isLoading,
                 error: view.error
             }

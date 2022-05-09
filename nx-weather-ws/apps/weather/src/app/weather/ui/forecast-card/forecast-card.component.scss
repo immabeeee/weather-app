@@ -1,5 +1,5 @@
 .wrapper {
-  background-color: var(--purple-100);
+  background-color: var(--grey-100);
   border-radius: 10px;
   padding: 25px;
   min-width: 300px;
@@ -9,11 +9,11 @@
 
   .forecast-wrapper {
     .daily-forecast-list-wrapper {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      display: flex;
+      overflow: auto;
+      grid-gap: 10px;
       gap: 10px;
       width: 100%;
-      overflow: auto;
       padding: 10px 0;
 
       .daily-forecast-wrapper {

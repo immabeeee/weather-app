@@ -1,15 +1,21 @@
-<router-outlet></router-outlet>
+<div class="wrapper">
+  <div class="header-wrapper"></div>
 
-<footer>
-  <p>Made with <span class="heart">❤</span> while learning Angular.</p>
-  <div class="credits">
-    <a
-      href="https://www.amcharts.com/free-animated-svg-weather-icons/"
-      target="_blank"
-      >Weather icons credits</a
-    >
-    <a href="https://openweathermap.org/api/" target="_blank"
-      >Weather API credits</a
-    >
+  <div class="content-wrapper">
+    <router-outlet></router-outlet>
   </div>
-</footer>
+
+  <footer class="footer-wrapper">
+    <p>Made with <span class="heart">❤</span> while learning Angular.</p>
+    <div class="credits">
+      <a
+        href="https://www.amcharts.com/free-animated-svg-weather-icons/"
+        target="_blank"
+        >Weather icons credits</a
+      >
+      <a href="https://openweathermap.org/api/" target="_blank"
+        >Weather API credits</a
+      >
+    </div>
+  </footer>
+</div>

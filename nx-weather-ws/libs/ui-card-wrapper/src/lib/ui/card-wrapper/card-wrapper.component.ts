@@ -14,6 +14,7 @@ export class CardWrapperComponent implements OnInit {
   @ContentChild(CARD_TOKEN, { static: true }) weatherCard!: Card;
   @Input() title!: string;
   @Input() isLoading!: boolean;
+  @Input() isRefreshAvailable: boolean = true;
 
   constructor() { }
 

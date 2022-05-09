@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Daily, DailyForecastFor7Days } from "./model/daily-forecast.model";
+import { Daily, DailyForecastFor7Days, Hourly } from "./model/daily-forecast.model";
 import { SimpleWeatherDetails, WeatherDetails } from "./model/weather-details.view.model";
 
 @Injectable()
@@ -21,10 +21,8 @@ export class WeatherDetailsTranslatorService {
         }
     }
 
-    public translateDailyForecastFor7DaysSimpleWeatherDetails(forecast: DailyForecastFor7Days | null): SimpleWeatherDetails[] | null {
-        if (!forecast) { return null };
-
-        const { daily } = forecast || { daily: [] };
+    public translateDailyForecastDetailsToSimpleWeatherDetails(daily: Daily[] | undefined): SimpleWeatherDetails[] | null {
+        if (!daily) { return null };
 
         return daily.map((d: Daily) => {
             return {
@@ -32,6 +30,20 @@ export class WeatherDetailsTranslatorService {
                 temp_min: d.temp.min,
                 temp_max: d.temp.max,
                 temp: d.temp.eve,
+                weather: d.weather
+            }
+        })
+    }
+
+    public translateHourlyForecastDetailsToSimpleWeatherDetails(hourly: Hourly[] | undefined): SimpleWeatherDetails[] | null {
+        if (!hourly) { return null };
+
+        return hourly.map((d: Hourly) => {
+            return {
+                timestamp: d.dt,
+                temp_min: null,
+                temp_max: null,
+                temp: d.temp,
                 weather: d.weather
             }
         })

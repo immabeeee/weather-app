@@ -1,21 +1,21 @@
 import { moduleMetadata, Story, Meta } from '@storybook/angular';
 import { UiSkeletonLoaderModule } from '@nx-weather-ws/ui-skeleton-loader';
-import { DailyForecastForSevenDaysCardComponent } from './daily-forecast-for-seven-days-card.component';
-import * as testData from './../../data-access/test-data/test-data';
+import { ForecastCardComponent } from './forecast-card.component';
+import * as testData from '../../data-access/test-data/test-data';
 import { WeatherCardModule } from '../weather-card/weather-card.module';
 
 export default {
-    title: 'DailyForecastForSevenDaysCardComponent',
-    component: DailyForecastForSevenDaysCardComponent,
+    title: 'ForecastCardComponent',
+    component: ForecastCardComponent,
     decorators: [
         moduleMetadata({
             imports: [UiSkeletonLoaderModule, WeatherCardModule],
         })
     ],
-} as Meta<DailyForecastForSevenDaysCardComponent>;
+} as Meta<ForecastCardComponent>;
 
-const Template: Story<DailyForecastForSevenDaysCardComponent> = (args: DailyForecastForSevenDaysCardComponent) => ({
-    component: DailyForecastForSevenDaysCardComponent,
+const Template: Story<ForecastCardComponent> = (args: ForecastCardComponent) => ({
+    component: ForecastCardComponent,
     props: args,
 });
 
