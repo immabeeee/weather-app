@@ -19,8 +19,8 @@ export class WeatherEnvVariablesService {
 
     public setWeatherEnvVariables(): void {
         if (environment.production) {
-            this.httpClient.get<Response>(window.location.origin + '/backend')
-                .pipe(map((response: Response) => response.json()), take(1)).subscribe((variables: any) => {
+            this.httpClient.get<WeatherEnvVariables>(window.location.origin + '/backend')
+                .pipe(take(1)).subscribe((variables: WeatherEnvVariables) => {
                     sessionStorage.setItem(this.urlBackendKey, variables.url);
                     sessionStorage.setItem(this.apiKeyKey, variables.apiKey);
                 });
