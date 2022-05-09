@@ -1,1 +1,1 @@
-web: cd "nx-weather-ws" && npm run start
+web: npm run start
